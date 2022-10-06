@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="Universe.css">
+  <link rel="icon" href="..\images\logo.png">
+  <script src="jquery-3.5.1.js">
+  </script>
+  <title>Join Us</title>
+</head>
+
+
+<body>
+  <div class="join-page">
+
+    <header>
+
+      <div>
+        <img src="../images/logo.png" alt="Not found">
+        <h4 class="header4">Space</h4>
+      </div>
+
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <a href="Home.html" class="linked-text">Home</a>
+          </li>
+          <li>
+            <a href="blackhole.html" class="linked-text">Space Hole</a>
+          </li>
+          <li>
+            <a href="solarsystem.html" class="linked-text">Solar System</a>
+          </li>
+          <li>
+            <a href="darkenergy.html" class="linked-text">Dark Energy</a>
+          </li>
+          <li>
+            <a href="spacetime.html" class="linked-text">Space Time</a>
+          </li>
+          <li>
+            <a href="supernova.html" class="linked-text">Supernova</a>
+          </li>
+          <li class="light">
+            <a href="joinus.html" class="linked-text">Join Us</a>
+          </li>
+        </ul>
+      </nav>
+
+    </header>
+
+  <main>
+
+    <form  action="index.html" method="post" onsubmit="return valid_join_form()">
+
+        <fieldset class="join-form">
+          <legend class="header4">Join team</legend>
+
+          <datalist id = "choose">
+            <option value="Space Hole">
+            <option value="Solar System">
+            <option value="Dark Energy">
+            <option value="Space Time">
+            <option value="Supernova">
+          </datalist>
+
+          <div class="subform">
+            <label class="small-text">Full Name <input type="text" name="ln" class="input-area" required id="namevalid"></label>
+
+          </div>
+
+          <div class="subform">
+            <label class="small-text">Email <input type="email" name="email" class="input-area" required id="emailvalid"></label>
+
+          </div>
+
+          <div class="subform">
+            <label class="small-text">Birthday <input type="date" name="birthday" class="input-area" required id="birthdayvalid"></label>
+
+          </div>
+
+          <div class="subform">
+            <label class="small-text">Interest <input type="text" list = "choose" name="interest" class="input-area" required></label>
+
+          </div>
+
+            <input type="submit" name="submit" value="Join Now"  class="submit-button">
+        </fieldset>
+
+    </form>
+
+    <div class="join-description">
+
+      <div class="join-us">
+        <h2 class="header2">Join US</h2>
+        <p class="highlited-text">Join our team to be up to dated
+          about all the information
+        about space <br>
+        and universe or to
+        share your information <br></p>
+      </div>
+
+      <div class="rules">
+        <h2 class="header2">rules</h2>
+        <ul>
+          <li class="header4">Fill the form</li>
+          <li class="header4">Join the team</li>
+          <li class="header4">Be an active member</li>
+          <li class="header4">share your information</li>
+        </ul>
+      </div>
+
+
+    </div>
+
+  </main>
+</div>
+
+
+<footer>
+
+  <ul class="host">
+    <li class="subhost">
+      <a href="Home.html">Home</a>
+    </li>
+
+    <li class="subhost">
+      <a href="Home.html#questions">Questions</a>
+    </li>
+
+    <li class="subhost">
+      <a href="Home.html">Theories</a>
+      <ul>
+        <li>
+          <a href="blackhole.html">Space Hole</a>
+        </li>
+        <li>
+          <a href="solarsystem.html">Solar System</a>
+        </li>
+        <li>
+          <a href="darkenergy.html">Dark Energy</a>
+        </li>
+        <li>
+          <a href="spacetime.html">Space Time</a>
+        </li>
+        <li>
+          <a href="supernova.html">Supernova</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="logo">
+    <img src="../images/logo.png" alt="Not found">
+    <h1 class="header4">Space</h1>
+  </div>
+
+  <div class="followus">
+  <h2>follow us</h2>
+  <a href="#"><img src="../images2/facebook.jpg"/></a>
+  <a href="#" ><img src="../images2/instagram.jpg"></a>
+  <a href="#" ><img src="../images2/youtube.jpg"></a>
+  <a href="#" ><img src="../images2/twitter.jpg"></a>
+  </div>
+
+  <div class="copyright">
+    <small><i><strong>
+          copyright &copy; all rights are reserved 2021 <br>
+          LU students
+    </strong></i></small>
+  </div>
+
+</footer>
+<script>
+
+function valid_join_form()
+{
+  let nameinput = document.getElementById('namevalid');
+  let emailinput = document.getElementById('emailvalid');
+  let name_pattern = /^[A-Z][a-z]+\s[a-z]+$/;
+  let email_pattern = /^(\w+\.*)+@(\w+\.)+\w+$/;
+
+
+  if(nameinput.value.match(name_pattern))
+  {
+    if(emailinput.value.match(email_pattern))
+    {
+      if(localStorage.getItem(emailinput.value))
+      {
+        alert("You are already in the team");
+        return false;
+      }
+      let sure = confirm("Are you sure you want to submit these information");
+      if(sure)
+      {
+        document.write("<body><div><h1>Welcome to the Team</h1><button><a>Click to return to home page</a></button></div></body>");
+        $("div").css({
+          "background":"url(\"../images/backimg4.jpg\")",
+          "box-shadow":"2px 2px 4px white",
+          "text-shadow":"1px 1px 2px darkblue",
+          "margin-top":"100px",
+          "margin-left":"300px",
+          "padding":"100px",
+          "border":"solid 2px white",
+          "border-radius":"5px",
+          "width":"500px",
+          "heigth":"500px",
+        });
+        $("body").css({
+          "background":"url(\"../images/backimg5.jpg\")",
+          });
+        $("h1").css({
+          "color":"white",
+          "font-size":"50px"
+        });
+        $("button").css({
+          "margin-top":"50px",
+          "margin-left":"50px",
+          "padding":"20px",
+          "background":"white",
+          "font-size":"20px",
+          "width":"400px",
+          "outline":"none",
+        });
+
+        $("a").css({
+          "text-decoration":"none",
+          "color":"grey"
+        });
+
+        $("a").attr("href","Home.html");
+
+      }
+      else{
+        return false;
+      }
+    }
+    else{
+      alert("Your email is not valid");
+      return false;
+    }
+  }
+  else{
+    alert("Your Full name must be:\nThe first letter is capital\nspace between your first and last name");
+    return false;
+  }
+
+  localStorage.setItem(emailinput.value,nameinput.value);
+  return true;
+}
+
+</script>
+
+</body>
+
+
+</html>
